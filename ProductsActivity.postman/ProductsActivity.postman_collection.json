@@ -1,0 +1,2490 @@
+{
+	"info": {
+		"_postman_id": "7928cbcf-a3c5-40ba-9cb2-96918dd348c6",
+		"name": "ProductsActivity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e0c28d6-774d-429b-a6f7-6dd4b4c628ff",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.globals.set(\"token\", jsonData.token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\" : \"UserName\",\r\n    \"Password\" : \"Password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AuthUrl}}/Authentication",
+					"host": [
+						"{{AuthUrl}}"
+					],
+					"path": [
+						"Authentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HealthChecks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ProductsActivityUrl}}/HealthChecks",
+					"host": [
+						"{{ProductsActivityUrl}}"
+					],
+					"path": [
+						"HealthChecks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AgeGroupController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/AgeGroup/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"AgeGroup",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/AgeGroup/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"AgeGroup",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/AgeGroup/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"AgeGroup",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/AgeGroup/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"AgeGroup",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/AgeGroup/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"AgeGroup",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/AgeGroup/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"AgeGroup",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CategoryController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Category/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Category",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Category/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Category",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Category/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Category",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Category/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Category",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Category/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Category",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Category/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Category",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ColorController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Color/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Color",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Color/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Color",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Color/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Color",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Color/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Color",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Color/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Color",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Color/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Color",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GenderController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Gender/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Gender",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Gender/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Gender",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Gender/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Gender",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Gender/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Gender",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Gender/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Gender",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Gender/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Gender",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ImageController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Image/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Image",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Image/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Image",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Image/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Image",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Image/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Image",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Image/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Image",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Image/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Image",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ImageLikeController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ImageLike/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ImageLike",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ImageLike/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ImageLike",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ImageLike/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ImageLike",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ImageLike/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ImageLike",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ImageLike/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ImageLike",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ImageLike/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ImageLike",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ProductController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Product/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Product",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Product/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Product",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Product/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Product",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Product/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Product",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Product/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Product",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Product/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Product",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ProductColorController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductColor/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductColor",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductColor/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductColor",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductColor/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductColor",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductColor/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductColor",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductColor/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductColor",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductColor/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductColor",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ProductLikeController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductLike/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductLike",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductLike/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductLike",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductLike/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductLike",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductLike/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductLike",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductLike/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductLike",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductLike/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductLike",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ProductSizeController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductSize/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductSize",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductSize/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductSize",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductSize/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductSize",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductSize/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductSize",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductSize/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductSize",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductSize/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductSize",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ProductViewedController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductViewed/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductViewed",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductViewed/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductViewed",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductViewed/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductViewed",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductViewed/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductViewed",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductViewed/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductViewed",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/ProductViewed/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"ProductViewed",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SizeController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Size/GetAll",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Size",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Size/GetById/1",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Size",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Size/Add",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Size",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Size/Update",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Size",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1,\n\t\"property0\": \"Property0\",\n\t\"property1\": \"Property1\",\n\t\"property2\": \"Property2\",\n\t\"property3\": \"Property3\",\n\t\"property4\": \"Property4\",\n\t\"property5\": \"Property5\",\n\t\"property6\": \"Property6\",\n\t\"property7\": \"Property7\",\n\t\"property8\": \"Property8\",\n\t\"property9\": \"Property9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Size/Delete",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Size",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLogsAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProductsActivityUrl}}/Size/GetLogsAsync",
+							"host": [
+								"{{ProductsActivityUrl}}"
+							],
+							"path": [
+								"Size",
+								"GetLogsAsync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
