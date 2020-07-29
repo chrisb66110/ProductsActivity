@@ -106,14 +106,20 @@ namespace ProductsActivity.Api
             builder.Register(ctx =>
             {
                 var connectionString = ctx.Resolve<ProductsActivitySettings>().ConnectionStrings.ProductsActivityConnectionString;
-                var dbOptions = new DbContextOptionsBuilder<ProductsActivityContext>().UseNpgsql(connectionString).Options;
+                var dbOptions = new DbContextOptionsBuilder<ProductsActivityContext>().UseNpgsql(connectionString, opt =>
+                    {
+                        opt.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+                    }).Options;
                 return dbOptions;
             }).InstancePerDependency();
 
             builder.Register(ctx =>
             {
                 var connectionString = ctx.Resolve<ProductsActivitySettings>().ConnectionStrings.CatalogueConnectionString;
-                var dbOptions = new DbContextOptionsBuilder<CatalogueContext>().UseNpgsql(connectionString).Options;
+                var dbOptions = new DbContextOptionsBuilder<CatalogueContext>().UseNpgsql(connectionString, opt =>
+                    {
+                        opt.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+                    }).Options;
                 return dbOptions;
             }).InstancePerDependency();
 

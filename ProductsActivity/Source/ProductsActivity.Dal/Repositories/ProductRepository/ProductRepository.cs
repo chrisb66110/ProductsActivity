@@ -61,7 +61,7 @@ namespace ProductsActivity.Dal.Repositories.ProductRepository
                     {
                         Id = p.Id,
                         Title = p.Title,
-                        Code = p.Title,
+                        Code = p.Code,
                         Price = p.Price,
                         PriceOld = p.PriceOld,
                         IncludeShipping = p.IncludeShipping,
