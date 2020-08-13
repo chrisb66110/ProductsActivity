@@ -7,6 +7,5 @@ namespace ProductsActivity.Api.Responses.ProductResponses
     public class SizeResponse
     {
         public string Code { get; set; }
-        public string Name { get; set; }
     }
 }

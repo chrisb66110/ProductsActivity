@@ -7,10 +7,7 @@ namespace ProductsActivity.Dal.Contexts
     [ExcludeFromCodeCoverage]
     public class CatalogueContext : DbContext
     {
-        public DbSet<AgeGroup> AgeGroups { get; set; }
-        public DbSet<Category> Categorys { get; set; }
-        public DbSet<Color> Colors { get; set; }
-        public DbSet<Gender> Genders { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductColor> ProductColors { get; set; }

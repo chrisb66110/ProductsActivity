@@ -10,6 +10,7 @@ namespace ProductsActivity.Dal.Models
         [Required] public long ProductId { get; set; }
         [Required] public string Url { get; set; }
         [Required] public bool Active { get; set; }
+        [Required] public int Position { get; set; }
 
         public Product Product { get; set; }
     }

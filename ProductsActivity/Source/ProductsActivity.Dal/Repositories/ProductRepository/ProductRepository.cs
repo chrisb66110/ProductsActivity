@@ -28,16 +28,17 @@ namespace ProductsActivity.Dal.Repositories.ProductRepository
             using (var context = new CatalogueContext(_options))
             {
                 response = await context.Products
+                    .AsNoTracking()
                     .Where(p => p.Id > from)
                     .Where(p => p.Category.Active && p.Active)
                     .OrderBy(p => p.Id)
+                    .Take(take)
                     .Select(p => new ProductGirdDto
                     {
                         Id = p.Id,
                         MainImage = p.MainImage,
                         Price = p.Price
                     })
-                    .Take(take)
                     .ToListAsync();
             }
 
@@ -51,11 +52,10 @@ namespace ProductsActivity.Dal.Repositories.ProductRepository
             using (var context = new CatalogueContext(_options))
             {
                 response = await context.Products
+                    .AsNoTracking()
                     .Where(p => p.Category.Active && p.Active)
-                    .Include(p => p.ProductsSizes)
-                        .ThenInclude(s => s.Size)
+                    .Include(p => p.ProductsSizes).ThenInclude(s => s.Size)
                     .Include(p => p.ProductsColors)
-                        .ThenInclude(s => s.Color)
                     .Include(p => p.Images)
                     .Select(p => new ProductDto
                     {
@@ -72,22 +72,15 @@ namespace ProductsActivity.Dal.Repositories.ProductRepository
                                 QuantityAvailable = ps.QuantityAvailable,
                                 Size = new SizeDto
                                     {
-                                        Code = ps.Size.Code,
-                                        Name = ps.Size.Name
+                                        Code = ps.Size.Code
                                     }
                             }).ToList(),
                         ProductsColors = p.ProductsColors.Select(pc => new ProductColorDto
                             {
-                                Color = new ColorDto
-                                {
-                                    Name = pc.Color.Name,
-                                    RGB = pc.Color.RGB
-                                }
+                                RGB = pc.RGB
                             }).ToList(),
                         Images = p.Images.Where(i => i.Active).Select(i => new ImageDto
                             {
-                                Id = i.Id,
-                                ProductId = i.ProductId,
                                 Url = i.Url
                             }).ToList()
                     })

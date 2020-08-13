@@ -9,7 +9,7 @@ namespace ProductsActivity.Dal.Models
     public class Product : BaseEntity<long>
     {
         [Required] public string Title { get; set; }
-        [Required] public long CategoryId { get; set; }
+        [Required] public long? CategoryId { get; set; }
         [Required] public string Code { get; set; }
         [Required] public decimal Price { get; set; }
         [Required] public decimal PriceOld { get; set; }
@@ -18,14 +18,8 @@ namespace ProductsActivity.Dal.Models
         [Required] public string MainImage { get; set; }
         [Required] public bool Active { get; set; }
 
-
-        [Required] public long AgeGroupId { get; set; }
-        [Required] public long GenderId { get; set; }
-
         public Category Category { get; set; }
-        public AgeGroup AgeGroup { get; set; }
-        public Gender Gender { get; set; }
-
+        
         public List<ProductSize> ProductsSizes { get; set; }
         public List<ProductColor> ProductsColors { get; set; }
         public List<Image> Images { get; set; }

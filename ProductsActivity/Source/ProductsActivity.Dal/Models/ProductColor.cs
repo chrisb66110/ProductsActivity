@@ -8,9 +8,8 @@ namespace ProductsActivity.Dal.Models
     public class ProductColor : BaseEntity<long>
     {
         [Required] public long ProductId { get; set; }
-        [Required] public long ColorId { get; set; }
+        [Required] public string RGB { get; set; }
 
         public Product Product { get; set; }
-        public Color Color { get; set; }
     }
 }

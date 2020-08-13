@@ -5,6 +5,6 @@ namespace ProductsActivity.Common.Dtos.ProductDtos
     [ExcludeFromCodeCoverage]
     public class ProductColorDto
     {
-        public ColorDto Color { get; set; }
+        public string RGB { get; set; }
     }
 }

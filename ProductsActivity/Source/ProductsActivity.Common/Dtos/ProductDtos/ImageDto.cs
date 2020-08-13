@@ -8,8 +8,10 @@ namespace ProductsActivity.Common.Dtos.ProductDtos
     public class ImageDto
     {
         public long Id { get; set; }
-        public long ProductId { get; set; }
         public string Url { get; set; }
+        public int Position { get; set; }
+
+        public ProductDto Product { get; set; }
 
         public List<ImageLikeDto> Likes { get; set; }
     }

@@ -5,6 +5,6 @@ namespace ProductsActivity.Api.Responses.ProductResponses
     [ExcludeFromCodeCoverage]
     public class ProductColorResponse
     {
-        public ColorResponse Color { get; set; }
+        public string RGB { get; set; }
     }
 }

@@ -6,6 +6,5 @@ namespace ProductsActivity.Common.Dtos.ProductDtos
     public class SizeDto
     {
         public string Code { get; set; }
-        public string Name { get; set; }
     }
 }
